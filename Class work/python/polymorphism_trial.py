@@ -10,6 +10,9 @@ class IBM:
      if phone_number!=None:
       print(f"Your phone number {phone_number} has been registered successfully")
 
+     if DOB != None and DOB != "":
+        print(f"Date of Birth: {DOB}") 
+
 ibm = IBM()
 ibm.register_online("abia@gmail.com", "1234")
-ibm.register_online("augusta@meltwater.org", "12345", "023433234")
+ibm.register_online("augusta@meltwater.org", "12345", "023433234","29/08/1111")
