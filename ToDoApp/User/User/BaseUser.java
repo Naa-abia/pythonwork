@@ -1,3 +1,4 @@
+package User;
 import java.rmi.server.UID;
 import java.util.Date;
 
@@ -125,14 +126,30 @@ public abstract class BaseUser {
 
     // the way you want the object to look like is the toString method so it behaves
     // in a way we want it to .This is the visualization of the object.
-    
+
     @Override
     public String toString() {
         return "{id:" + this.id + "}";
     }
 
-    // abstract void Login ();
+    // this constructors should be created to show what each user should have when
+    // being implemented
+    public BaseUser(String firstName, String middleName, String password, String email) {
+        this.id = new UID();
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.password = password;
+        this.email = email;
+    }
 
-    // abstract void Register();
+    /*
+     * these methods are saying how the user is supposed to act either login or
+     * register. Void because we do not want to return anything and its not
+     * specifying a modifier because its public by default.
+     */
+
+    abstract void Login(String email , String password);
+
+    abstract void Register();
 
 }
